@@ -5,10 +5,18 @@ import requests
 os.system('cmd /c "pip show requests"')
 
 # curl 
-google = requests.get('https://www.google.com/')
+google = requests.get('https://www.google.com/').text
 print(google)
 
 # curl download itself / prints itself 
-lab_1 = requests.get('https://raw.githubusercontent.com/kezzayuno/cmput404/master/lab-1.py?token=GHSAT0AAAAAAB444ROW5ADJLW4NAHIIHW42Y53JVAA')
-print(lab_1)
+dir = os.getcwd()
+lab_1_github = requests.get('https://raw.githubusercontent.com/kezzayuno/cmput404/master/lab-1.py?token=GHSAT0AAAAAAB444ROXENQGNEVV7F2SBAHAY53KJNA')
+
+# Saves Python script from GitHub into local directory 
+lab_1_local = open(dir + 'from_github.py', 'wb')
+lab_1_local.write(lab_1_github.content)
+lab_1_local.close()
+
+# Display source code from GitHub
+print(lab_1_github.content)
 
