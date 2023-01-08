@@ -10,7 +10,7 @@ print(google)
 
 # curl download itself / prints itself 
 dir = os.getcwd()
-lab_1_github = requests.get('https://raw.githubusercontent.com/kezzayuno/cmput404/master/lab-1.py?token=GHSAT0AAAAAAB444ROXENQGNEVV7F2SBAHAY53KJNA')
+lab_1_github = requests.get('https://raw.githubusercontent.com/kezzayuno/cmput404/master/lab-1.py?token=GHSAT0AAAAAAB444ROX7BWI5LENZYKVMIGSY53KLJQ')
 
 # Saves Python script from GitHub into local directory 
 lab_1_local = open(dir + 'from_github.py', 'wb')
